@@ -1,4 +1,6 @@
 # leetcode link: https://leetcode.com/problems/contains-duplicate/
+from types import List
+
 
 class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:

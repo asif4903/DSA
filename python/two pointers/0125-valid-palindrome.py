@@ -26,14 +26,16 @@ class Solution:
         # we are going to use two pointers
         l, r = 0, len(s) - 1
         while l < r:
-            while l < r and not self.alphanum(s[l]):
+            if not self.alphanum(s[l]):
                 l += 1
-            while l < r and not self.alphanum(s[r]):
+            elif not self.alphanum(s[r]):
                 r -= 1
-            if s[l].lower() != s[r].lower():
-                return False
-            l += 1
-            r -= 1
+            else:
+                if s[l].lower() != s[r].lower():
+                    return False
+                else:
+                    l += 1
+                    r -= 1
         return True
 
     # Could write own alpha-numeric function
